@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="styles.css"> 
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://use.typekit.net/yit8fla.css">
+    <link rel="stylesheet" href="css/style.css"></link>
+    
+    <title></title>
+</head>
+<body>
+    <div class="box" id="box">
+        <h1 id="the1">THE</h1>
+    </div>
+    <div class="oval" id="oval">
+        <h1 id="music1"> MUSIC</h1>
+    </div>
+    <div class="box1" id="box1">
+        <h1 id="experience">EXPERIENCE</h1>
+    </div>
+    <ul class="bottom-list">
+        <li><a href="https://ketanaanekar.github.io/feelingwoozy/entry%206/index.html#">Feeling woozy?</a></li>
+        <li><a href="https://ketanaanekar.github.io/speedwalkinginnyc/entry%207/index.html">Speed walking in NYC</a></li>
+        <li><a href="https://ketanaanekar.github.io/gloomydays/entry%208/index.html">Gloomy days</a></li>
+        <li><a href="https://ketanaanekar.github.io/artmovements/entry%209/index.html">Songs as art movements</a></li>
+        <li><a href="https://ketanaanekar.github.io/goodbye/entry%2010/index.html">Goodbye...</a></li>
+    </ul>
+    <ul class="top-list">
+        <li><a href="https://ketanaanekar.github.io/entry-1/j/index.html">Your song recs!</a></li>
+        <li><a href="https://ketanaanekar.github.io/mysongrec/entry%202/index.html">My song recs!</a></li>
+        <li><a href="https://ketanaanekar.github.io/memorylane/entry%203/index.html">Trip down memory lane</a></li>
+        <li><a href="https://ketanaanekar.github.io/skippingsongs/entry%204/index.html">Skipping songs?</a></li>
+        <li><a href="https://ketanaanekar.github.io/dadsplaylist/entry%205/index.html">Your dads playlist</a></li>
+    </ul>
+
+    <script>
+        var isBackgroundChanged = false;
+
+        document.getElementById('box').addEventListener('click', function() {
+            toggleBackground('box', 'the1');
+        });
+
+        document.getElementById('oval').addEventListener('click', function() {
+            toggleBackground('oval', 'music1');
+        });
+
+        document.getElementById('box1').addEventListener('click', function() {
+            toggleBackground('box1', 'experience');
+        });
+
+        function toggleBackground(elementId, textId) {
+            var body = document.body;
+            var header = document.querySelector('.top-list');
+            var footer = document.querySelector('.bottom-list');
+            var element = document.getElementById(elementId);
+            var text = document.getElementById(textId);
+
+            if (isBackgroundChanged) {
+                // Change back to the original background
+                body.style.backgroundImage = "none";
+                header.style.backgroundColor = "#ff0000";
+                footer.style.backgroundColor = "#ff0000";
+                element.style.backgroundColor = ""; // Reset to default
+                text.style.color = "white"; // Reset to default
+            } else {
+                // Change to the gif background
+                body.style.backgroundImage = "url('color wooh.gif')";
+                body.style.backgroundSize = "cover";
+                header.style.backgroundColor = "black";
+                footer.style.backgroundColor = "black";
+                // Invert colors of the animated div elements
+                element.style.backgroundColor = "black";
+                text.style.color = "white";
+            }
+
+            // Toggle the flag
+            isBackgroundChanged = !isBackgroundChanged;
+        }
+    </script>
+</body>
+</html>
